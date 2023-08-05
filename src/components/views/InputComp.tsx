@@ -64,6 +64,7 @@ const InputComp = () => {
         setTapKey(true);
         setFilteredData(filter);
       } else if (inputValue.length >= 1 && filteredData.length >= 1) {
+        setEmpty(false);
         setTapKey(true);
         setFilteredData(filter);
       }
