@@ -42,13 +42,19 @@ const InputComp = () => {
 
     setFilteredData(filter);
 
-    if (inputValue.length === 0 || filteredData.length === 0) {
+    if (inputValue.length <= 0) {
       setEmpty(true);
 
       setTimeout(() => {
         setEmpty(false);
-        setTapKey(false);
       }, 3000);
+    } else if (filteredData.length <= 0) {
+      setTapKey(true);
+      setFilteredData(filter);
+    } else if (inputValue.length >= 1 && filteredData.length <= 0) {
+      setEmpty(false);
+      setTapKey(true);
+      setFilteredData(filter);
     } else if (inputValue.length >= 1 && filteredData.length !== 0) {
       setEmpty(false);
       setTapKey(true);
