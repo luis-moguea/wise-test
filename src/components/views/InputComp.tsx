@@ -16,6 +16,7 @@ const InputComp = () => {
   const [inputValue, setInputValue] = useState("");
   const [seeAll, setSeeAll] = useState(false);
   const [data, setData] = useState<Data[]>([]);
+  const [tapKey, setTapKey] = useState(false);
 
   console.log(data);
 
@@ -56,6 +57,7 @@ const InputComp = () => {
       if (filteredData.length === 0) {
         setFilteredData(data);
         setFilteredData(filter);
+        setTapKey(true);
       } else {
         setFilteredData(filter);
       }
@@ -128,7 +130,7 @@ const InputComp = () => {
               </div>
             ))
           )
-        ) : filteredData.length === 0 ? (
+        ) : tapKey && filteredData.length === 0 ? (
           <p className="transactions__error">No transaction has been found</p>
         ) : (
           filteredData.map((el, index) => (
