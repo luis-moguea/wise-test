@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
-import "../styles/input.css";
-import "../styles/transactions.css";
+import "../../styles/input.css";
+import "../../styles/transactions.css";
 import arrow from "../../public/icons/arrow down.svg";
 import { transactionsData } from "../../data/transactionData";
 import { mediaTransData } from "../../data/mediaTransData";
