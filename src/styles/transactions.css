@@ -29,6 +29,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
+    margin-top: 24px;
     background-color: #EAF1EB;
     display: flex;
     justify-content: center;

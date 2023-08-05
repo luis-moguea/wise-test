@@ -22,7 +22,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 
 .actions__main__data__cont:hover{
@@ -31,8 +30,9 @@
 }
 
 .actions__main__data__cont--text {
-    width: 400px;
-    padding: 15px;
+    width: 120px;
+    padding-left: 15px;
+    padding-top: 0;
     font-size: 14px;
     font-weight: 600;
 }
@@ -40,7 +40,8 @@
 .actions__main__data__cont--img{
     width: 144px;
     height: 144px;
-    padding: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
 }
 
 @media all and (max-width: 768px) {
