@@ -58,7 +58,7 @@ const InputComp = () => {
       setTapKey(true);
       setFilteredData(filter);
     }
-  }, [inputValue, data]);
+  }, [data]);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
