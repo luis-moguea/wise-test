@@ -6,7 +6,7 @@ export const mediaFlagsData = [
     },
     
     {
-        flag: "../../public/Flags/aud.svg",
+        flag: "../public/Flags/aud.svg",
         remaining: "45,010.00",
         currency: "Australlian Dollar"
     },

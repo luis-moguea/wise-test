@@ -1,7 +1,7 @@
 export const otherActionsData = [
     {
         title: "Schedule Your Transfer",
-        image: "../../public/Other-actions/calendar.png"
+        image: "../public/Other-actions/calendar.png"
     },
     {
         title: "Donate To Charities",
