@@ -58,14 +58,15 @@ const InputComp = () => {
         setFilteredData(data);
         setFilteredData(filter);
         setTapKey(true);
+
+        setTimeout(() => {
+          setTapKey(false);
+        }, 3000);
       } else {
         setFilteredData(filter);
       }
     }
   };
-
-  console.log(data);
-  console.log(filteredData);
 
   const handleSeeAll = () => {
     setSeeAll(true);
