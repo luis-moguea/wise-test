@@ -55,6 +55,7 @@ const InputComp = () => {
       if (inputValue.length === 0) {
         setEmpty(true);
         setTapKey(false);
+        setInputValue(actualInputValue);
 
         setTimeout(() => {
           setEmpty(false);
@@ -63,10 +64,12 @@ const InputComp = () => {
         setEmpty(false);
         setTapKey(true);
         setFilteredData(filter);
+        setInputValue(actualInputValue);
       } else if (inputValue.length >= 1 && filteredData.length >= 1) {
         setEmpty(false);
         setTapKey(true);
         setFilteredData(filter);
+        setInputValue(actualInputValue);
       }
     }
   };
