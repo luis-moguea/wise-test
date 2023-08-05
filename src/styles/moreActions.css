@@ -63,6 +63,10 @@
         margin-top: 0;
         width: 120px;
     }
+    .actions__main__data__cont--img{
+        padding-bottom: unset;
+        padding-left: unset
+    }
 }
 
 
