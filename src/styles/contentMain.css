@@ -15,22 +15,3 @@
     
 }
 
-@media all and (max-width: 768px) {
-
-    .balance__amount {
-        font-size: 16px;
-
-    }
-
-    .balance__title {
-        font-size: 11px;
-    }
-
-    
-}
-
-@media all and (max-width: 420px) {
-    .balance{
-        padding-left: 20px;
-    }
-}

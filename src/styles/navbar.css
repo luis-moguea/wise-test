@@ -63,13 +63,6 @@
     cursor: pointer;
 }
 
-@media all and (max-width: 768px) {
-
-    .navbar{
-        box-sizing: border-box;
-        padding: 24px 0;
-    }
-}
 
 @media all and (max-width: 420px) {
 
@@ -78,28 +71,32 @@
     }
 
     .navbar__notify{
-        width: 35px;
-        height: 35px;
-        margin-left: 55px;
+        width: 42px;
+        height: 42px;
     }
 
     .navbar__profile--img{
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .navbar__profile--user{
-        font-size: 10px;
-        width: 80px;
+        font-size: 14px;
+        width: 120px;
     }
 
     .navbar__notify--bell{
-        width: 14px;
+        width: 18px;
     }
 
     .navbar__profile{
-        
         border-radius: 20px;
+    }
+
+    .navbar{
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: unset;
     }
 
 }

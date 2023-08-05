@@ -52,8 +52,18 @@ const InputComp = () => {
       });
 
       setFilteredData(filter);
+
+      if (filteredData.length === 0) {
+        setFilteredData(data);
+        setFilteredData(filter);
+      } else {
+        setFilteredData(filter);
+      }
     }
   };
+
+  console.log(data);
+  console.log(filteredData);
 
   const handleSeeAll = () => {
     setSeeAll(true);
@@ -118,8 +128,10 @@ const InputComp = () => {
               </div>
             ))
           )
+        ) : filteredData.length === 0 ? (
+          <p className="transactions__error">No transactions were found</p>
         ) : (
-          data.map((el, index) => (
+          filteredData.map((el, index) => (
             <div key={index} className="transactions__flex">
               <div className="transactions__company">
                 <div className="transactions__company__arrow">

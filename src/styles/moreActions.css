@@ -52,11 +52,6 @@
         display: none;
     }
 
-    .actions__main{
-        box-sizing: border-box;
-        
-    }
-
     .actions__main__data__cont {
         width: 206;
         padding: 24px;
@@ -65,15 +60,8 @@
     .actions__main__data__cont--text {
         padding: 0;
         margin-top: 0;
-        width: 100px;
+        width: 120px;
     }
 }
 
-@media all and (max-width: 420px) {
 
-
-    .actions__main--title{
-        padding-left: 20px;
-        font-size: 18px;
-    }
-}

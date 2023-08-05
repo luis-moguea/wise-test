@@ -76,45 +76,13 @@ span {
 }
 
 @media all and (max-width: 768px) {
-    .transactions__company__data--name{
-        font-size: 14px;
-    }
-
-    .transactions__company__data--date{
-        font-size: 11px;
-    }
-
-    .transactions__company__arrow--icon {
-        width: 18px;
-    }
-
-    .transactions__quantity--amount {
-        font-size: 14px;
-    }
-
-    .transactions__quantity--currency {
-        font-size: 11px;
+    .transactions__company__arrow{
+        margin-top: 24px;
     }
 }
 
 @media all and (max-width: 420px) {
-    .transactions__company__data--name{
-        font-size: 11px;
-    }
-
-    .transactions__company__data--date{
-        font-size: 9px;
-    }
-
-    .transactions__company__arrow--icon {
-        width: 18px;
-    }
-
-    .transactions__quantity--amount {
-        font-size: 11px;
-    }
-
-    .transactions__quantity--currency {
-        font-size: 9px;
+    .transactions__company__arrow{
+        margin-top: 24px;
     }
 }

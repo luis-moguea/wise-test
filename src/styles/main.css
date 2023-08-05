@@ -14,7 +14,6 @@
 
     .app{
         margin: 0 auto;
-        width: 768px;
         padding: 0px 24px;
         flex: unset;
         overflow-x: auto;
@@ -29,6 +28,6 @@
 @media all and (max-width: 420px) {
 
     .app{
-        padding: 0px 0px;
+        padding: 0px 12px;
     }
 }

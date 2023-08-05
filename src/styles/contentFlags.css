@@ -41,23 +41,13 @@
 
 @media all and (max-width: 768px) {
 
-    
-    
-    .content__overflow {
-        width: 100%;
-       overflow-x: auto;
-    }
-
-
     .content__main--balance-text{
-        font-size: 11px;
+        margin-top: 0;
     }
 
     .content__main--balance-text-h2{
-        font-size: 16px;
+        margin-bottom: 0;
     }
 
-    .content{
-        box-sizing: border-box
-    }
+    
 }

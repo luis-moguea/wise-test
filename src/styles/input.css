@@ -51,37 +51,25 @@
     background-color: #7BD93F;
 }
 
-@media all and (max-width: 768px) {
-    .input__title {
-        font-size: 18px;
-    }
 
-    .input__main {
-        box-sizing: border-box
-    }
-}
 
 @media all and (max-width: 420px) {
     
     .input__main {
-        box-sizing: border-box;
         display: block;
-        padding-left: 15px;
     }
 
-    .input__title{
-        margin-bottom: 15px;
-        padding-left: 7px;
+    .input__components--button{
+        font-size: 14px;
     }
+
        
     .input__components--input{
-        width: 245px;
+        width: 253px;
         height: 27px;
     }
 
-    .transactions__error{
-        padding-left: 20px;
-    }
+    
 
 }
 
