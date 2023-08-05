@@ -17,8 +17,7 @@ const InputComp = () => {
   const [seeAll, setSeeAll] = useState(false);
   const [data, setData] = useState<Data[]>([]);
   const [tapKey, setTapKey] = useState(false);
-
-  console.log(data);
+  const [empty, setEmpty] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -43,6 +42,7 @@ const InputComp = () => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       event.preventDefault();
+
       const actualInputValue = (event.target as HTMLInputElement).value;
       setInputValue(actualInputValue);
 
@@ -52,17 +52,19 @@ const InputComp = () => {
           .includes(actualInputValue.toLowerCase());
       });
 
-      setFilteredData(filter);
-
-      if (filteredData.length === 0) {
-        setFilteredData(data);
-        setFilteredData(filter);
-        setTapKey(true);
+      if (inputValue.length === 0) {
+        setEmpty(true);
+        setTapKey(false);
 
         setTimeout(() => {
-          setTapKey(false);
+          setEmpty(false);
         }, 3000);
-      } else {
+      } else if (inputValue.length >= 1 && filteredData.length <= 0) {
+        setEmpty(false);
+        setTapKey(true);
+        setFilteredData(filter);
+      } else if (inputValue.length >= 1 && filteredData.length >= 1) {
+        setTapKey(true);
         setFilteredData(filter);
       }
     }
@@ -73,8 +75,6 @@ const InputComp = () => {
     setFilteredData(data);
     setInputValue("");
   };
-
-  console.log(inputValue);
 
   return (
     <>
@@ -133,7 +133,10 @@ const InputComp = () => {
           )
         ) : tapKey && filteredData.length === 0 ? (
           <p className="transactions__error">No transaction has been found</p>
+        ) : empty ? (
+          <p className="transactions__error">Please enter a name</p>
         ) : (
+          tapKey &&
           filteredData.map((el, index) => (
             <div key={index} className="transactions__flex">
               <div className="transactions__company">
