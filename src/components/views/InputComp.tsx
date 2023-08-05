@@ -40,6 +40,8 @@ const InputComp = () => {
       return el.company.toLowerCase().includes(inputValue.toLowerCase());
     });
 
+    setFilteredData(filter);
+
     if (inputValue.length === 0) {
       setEmpty(true);
       setTapKey(false);
