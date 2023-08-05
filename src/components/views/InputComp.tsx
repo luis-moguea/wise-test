@@ -40,8 +40,6 @@ const InputComp = () => {
       return el.company.toLowerCase().includes(inputValue.toLowerCase());
     });
 
-    setFilteredData(filter);
-
     if (inputValue.length === 0) {
       setEmpty(true);
       setTapKey(false);
@@ -58,7 +56,7 @@ const InputComp = () => {
       setTapKey(true);
       setFilteredData(filter);
     }
-  }, [data]);
+  }, [inputValue, data]);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
