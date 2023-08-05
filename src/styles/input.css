@@ -79,7 +79,9 @@
         height: 27px;
     }
 
-    
+    .transactions__error{
+        padding-left: 20px;
+    }
 
 }
 
