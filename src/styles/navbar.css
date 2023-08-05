@@ -71,7 +71,7 @@
     }
 }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 420px) {
 
     .navbar{
         padding: 10px 0;

@@ -30,9 +30,9 @@ const ContentFlagsBoxes = () => {
 
   return (
     <>
-      <div>
-        <p>Total balance</p>
-        <h2>{funds}</h2>
+      <div className="balance">
+        <p className="balance__title">Total balance</p>
+        <h2 className="balance__amount">{funds}</h2>
       </div>
       <div className="content">
         {data.map((el, index) => (

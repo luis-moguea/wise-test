@@ -39,6 +39,7 @@
     line-height: 19.36px;
     padding: 5px 12px;
     gap: 10px;
+    color: #000000;
 }
 
 .input__components--button:hover{
@@ -70,12 +71,15 @@
 
     .input__title{
         margin-bottom: 15px;
+        padding-left: 7px;
     }
        
     .input__components--input{
-        width: 223px;
+        width: 245px;
         height: 27px;
     }
+
+    
 
 }
 

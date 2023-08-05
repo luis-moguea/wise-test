@@ -57,3 +57,12 @@
         
     }
 }
+
+@media all and (max-width: 420px) {
+
+
+    .actions__main--title{
+        padding-left: 20px;
+        font-size: 18px;
+    }
+}

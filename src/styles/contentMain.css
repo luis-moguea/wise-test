@@ -1,29 +1,36 @@
-div{
+.balance{
     gap: 0;
     margin: 0;
 }
 
-p{
+.balance__title{
     font-size: 14px;
     margin: 0;
 
 }
 
-h2{
+.balance__amount{
     font-size: 22px;
     margin: 0;
     
 }
 
 @media all and (max-width: 768px) {
-    h2 {
+
+    .balance__amount {
         font-size: 16px;
 
     }
 
-    p {
+    .balance__title {
         font-size: 11px;
     }
 
     
+}
+
+@media all and (max-width: 420px) {
+    .balance{
+        padding-left: 20px;
+    }
 }

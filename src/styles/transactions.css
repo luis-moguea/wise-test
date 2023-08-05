@@ -97,7 +97,7 @@ span {
     }
 }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 420px) {
     .transactions__company__data--name{
         font-size: 11px;
     }

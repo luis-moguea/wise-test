@@ -29,6 +29,6 @@
 @media all and (max-width: 420px) {
 
     .app{
-        padding: 0px 1px;
+        padding: 0px 0px;
     }
 }
