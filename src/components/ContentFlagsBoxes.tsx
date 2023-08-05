@@ -1,5 +1,5 @@
 import { flagsData } from "../data/currenciesFlagsData";
-import { mediaFlagsData } from "../data/mediaFlagsData";
+import mediaFlagsData from "../data/mediaFlagsData.json";
 import "../styles/contentFlags.css";
 import "../styles/contentMain.css";
 import { useEffect, useState } from "react";
