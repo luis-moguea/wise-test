@@ -76,8 +76,14 @@ const InputComp = () => {
 
   const handleSeeAll = () => {
     setSeeAll(true);
+    setEmpty(true);
     setFilteredData(data);
-    setInputValue("");
+
+    if (filteredData.length === 0) {
+      setTimeout(() => {
+        setSeeAll(false);
+      }, 3000);
+    }
   };
 
   return (
