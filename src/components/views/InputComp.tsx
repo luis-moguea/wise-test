@@ -35,55 +35,46 @@ const InputComp = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const preventDefault = (event: FormEvent) => {
-    event.preventDefault();
-  };
+  useEffect(() => {
+    const filter = data.filter((el) => {
+      return el.company.toLowerCase().includes(inputValue.toLowerCase());
+    });
+
+    setFilteredData(filter);
+
+    if (inputValue.length === 0) {
+      setEmpty(true);
+      setTapKey(false);
+
+      setTimeout(() => {
+        setEmpty(false);
+      }, 3000);
+    } else if (inputValue.length >= 1 && filteredData.length <= 0) {
+      setEmpty(false);
+      setTapKey(true);
+      setFilteredData(filter);
+    } else if (inputValue.length >= 1 && filteredData.length >= 1) {
+      setEmpty(false);
+      setTapKey(true);
+      setFilteredData(filter);
+    }
+  }, [inputValue, data]);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       event.preventDefault();
 
-      const actualInputValue = (event.target as HTMLInputElement).value;
-      setInputValue(actualInputValue);
-
-      const filter = data.filter((el) => {
-        return el.company
-          .toLowerCase()
-          .includes(actualInputValue.toLowerCase());
-      });
-
-      if (inputValue.length === 0) {
-        setEmpty(true);
-        setTapKey(false);
-        setInputValue(actualInputValue);
-
-        setTimeout(() => {
-          setEmpty(false);
-        }, 3000);
-      } else if (inputValue.length >= 1 && filteredData.length <= 0) {
-        setEmpty(false);
-        setTapKey(true);
-        setFilteredData(filter);
-        setInputValue(actualInputValue);
-      } else if (inputValue.length >= 1 && filteredData.length >= 1) {
-        setEmpty(false);
-        setTapKey(true);
-        setFilteredData(filter);
-        setInputValue(actualInputValue);
-      }
+      setInputValue(event.currentTarget.value);
     }
+  };
+
+  const preventDefault = (event: FormEvent) => {
+    event.preventDefault();
   };
 
   const handleSeeAll = () => {
     setSeeAll(true);
-    setEmpty(true);
     setFilteredData(data);
-
-    if (filteredData.length === 0) {
-      setTimeout(() => {
-        setSeeAll(false);
-      }, 3000);
-    }
   };
 
   return (
@@ -95,6 +86,7 @@ const InputComp = () => {
             <input
               placeholder="Search by name"
               onKeyDown={handleKeyDown}
+              onClick={() => setInputValue("")}
               className="input__components--input"
               type="text"
             />
