@@ -26,9 +26,9 @@
     }
 }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 420px) {
 
     .app{
-        padding: 0px 5px;
+        padding: 0px 1px;
     }
 }

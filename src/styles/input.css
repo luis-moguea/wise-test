@@ -60,14 +60,12 @@
     }
 }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 420px) {
     
     .input__main {
         box-sizing: border-box;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        display: block;
+        padding-left: 15px;
     }
 
     .input__title{
@@ -75,7 +73,7 @@
     }
        
     .input__components--input{
-        width: 169px;
+        width: 223px;
         height: 27px;
     }
 
