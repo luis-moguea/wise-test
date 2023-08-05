@@ -64,7 +64,10 @@
     
     .input__main {
         box-sizing: border-box;
-        display: block;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
     .input__title{
