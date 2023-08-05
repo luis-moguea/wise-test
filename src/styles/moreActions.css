@@ -56,6 +56,17 @@
         box-sizing: border-box;
         
     }
+
+    .actions__main__data__cont {
+        width: 206;
+        padding: 24px;
+    }
+
+    .actions__main__data__cont--text {
+        padding: 0;
+        margin-top: 0;
+        width: 100px;
+    }
 }
 
 @media all and (max-width: 420px) {
