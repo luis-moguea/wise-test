@@ -97,7 +97,7 @@ const InputComp = () => {
       <section className="transactions">
         {seeAll ? (
           seeAll && filteredData.length === 0 ? (
-            <p className="transactions__error">No transactions were found</p>
+            <p className="transactions__error">No transaction has been found</p>
           ) : (
             seeAll &&
             filteredData.map((el, index) => (
@@ -129,7 +129,7 @@ const InputComp = () => {
             ))
           )
         ) : filteredData.length === 0 ? (
-          <p className="transactions__error">No transactions were found</p>
+          <p className="transactions__error">No transaction has been found</p>
         ) : (
           filteredData.map((el, index) => (
             <div key={index} className="transactions__flex">
