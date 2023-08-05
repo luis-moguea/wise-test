@@ -17,6 +17,8 @@ const InputComp = () => {
   const [seeAll, setSeeAll] = useState(false);
   const [data, setData] = useState<Data[]>([]);
 
+  console.log(data);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 812) {
@@ -48,6 +50,7 @@ const InputComp = () => {
           .toLowerCase()
           .includes(actualInputValue.toLowerCase());
       });
+
       setFilteredData(filter);
     }
   };
@@ -82,11 +85,41 @@ const InputComp = () => {
         </div>
       </div>
       <section className="transactions">
-        {seeAll && filteredData.length === 0 ? (
-          <p className="transactions__error">No transactions were found</p>
+        {seeAll ? (
+          seeAll && filteredData.length === 0 ? (
+            <p className="transactions__error">No transactions were found</p>
+          ) : (
+            seeAll &&
+            filteredData.map((el, index) => (
+              <div key={index} className="transactions__flex">
+                <div className="transactions__company">
+                  <div className="transactions__company__arrow">
+                    <img
+                      className="transactions__company__arrow--icon"
+                      src={arrow}
+                      alt="arrow-icon"
+                    />
+                  </div>
+                  <div className="transactions__company__data">
+                    <p className="transactions__company__data--name">
+                      {el.company}
+                    </p>
+                    <p className="transactions__company__data--date">
+                      {el.date}
+                    </p>
+                  </div>
+                </div>
+                <div className="transactions__quantity">
+                  <p className="transactions__quantity--amount">{el.amount}</p>
+                  <p className="transactions__quantity--currency">
+                    To<span> your USD account</span>
+                  </p>
+                </div>
+              </div>
+            ))
+          )
         ) : (
-          seeAll &&
-          filteredData.map((el, index) => (
+          data.map((el, index) => (
             <div key={index} className="transactions__flex">
               <div className="transactions__company">
                 <div className="transactions__company__arrow">
