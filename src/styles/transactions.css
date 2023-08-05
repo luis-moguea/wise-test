@@ -1,0 +1,120 @@
+.transactions {
+    padding: 0 0 10px 0;
+}
+
+.transactions__error{
+    color: red;
+}
+
+.transactions__flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 12px;
+    border-radius: 12px;
+}
+
+.transactions__flex:hover{
+    background-color: #F4F9F5;
+}
+
+
+
+.transactions__company {
+    display: flex;
+    gap: 16px;
+}
+
+
+.transactions__company__arrow{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #EAF1EB;
+    display: flex;
+    justify-content: center;
+}
+
+.transactions__company__arrow--icon {
+    width: 24px;
+}
+
+.transactions__company__data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.transactions__company__data--name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.transactions__company__data--date {
+    font-size: 14px;
+}
+
+.transactions__quantity{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.transactions__quantity--amount {
+    text-align: end;
+    font-size: 16px;
+    font-weight: 600;
+    color: #447C20;
+}
+
+.transactions__quantity--currency {
+    font-size: 14px;
+    color: #0E0F0C;
+}
+
+span {
+    font-weight: bold;
+}
+
+@media all and (max-width: 768px) {
+    .transactions__company__data--name{
+        font-size: 14px;
+    }
+
+    .transactions__company__data--date{
+        font-size: 11px;
+    }
+
+    .transactions__company__arrow--icon {
+        width: 18px;
+    }
+
+    .transactions__quantity--amount {
+        font-size: 14px;
+    }
+
+    .transactions__quantity--currency {
+        font-size: 11px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .transactions__company__data--name{
+        font-size: 11px;
+    }
+
+    .transactions__company__data--date{
+        font-size: 9px;
+    }
+
+    .transactions__company__arrow--icon {
+        width: 18px;
+    }
+
+    .transactions__quantity--amount {
+        font-size: 11px;
+    }
+
+    .transactions__quantity--currency {
+        font-size: 9px;
+    }
+}
