@@ -16,7 +16,7 @@ const InputComp = () => {
   const [inputValue, setInputValue] = useState("");
   const [seeAll, setSeeAll] = useState(false);
   const [data, setData] = useState<Data[]>([]);
-  const [tapKey, setTapKey] = useState(false);
+  const [tapKey, setTapKey] = useState<boolean | null>(null);
   const [empty, setEmpty] = useState(false);
   const [noData, setNoData] = useState(false);
 
@@ -44,35 +44,33 @@ const InputComp = () => {
       return el.company.toLowerCase().includes(inputValue.toLowerCase());
     });
 
+    if (inputValue.length >= 1 && filter.length === 0) {
+      setEmpty(false);
+      setNoData(true);
+      if (tapKey !== null) {
+        setTapKey(false);
+      }
+      setSeeAll(false);
+    } else if (filter.length >= 1) {
+      setEmpty(false);
+      if (tapKey !== null) {
+        setTapKey(true);
+      }
+      setSeeAll(false);
+      setNoData(false);
+    } else {
+      setTapKey(null);
+    }
+
     setFilteredData(filter);
-    setTapKey(filter.length >= 1);
   }, [inputValue, data]);
 
   useEffect(() => {
-    setTapKey(false);
-    if (inputValue.length >= 1 && filteredData.length === 0) {
-      setEmpty(false);
-      setNoData(true);
-      setTapKey(false);
-      setSeeAll(false);
-    } else if (filteredData.length >= 1) {
-      setEmpty(false);
-      setTapKey(true);
-      setSeeAll(false);
-      setNoData(false);
-    }
-  }, [inputValue, filteredData]);
-
-  useEffect(() => {
-    setTapKey(false);
-
     const handleResize = () => {
       if (window.innerWidth <= 812) {
         setData(mediaTransData);
-        setTapKey(false);
       } else if (window.innerWidth >= 813) {
         setData(transactionsData);
-        setTapKey(false);
       }
     };
 
