@@ -59,27 +59,31 @@
         display: block;
     }
 
+    .input__components {
+        justify-content: space-between;
+        width: 100%;
+        display: unset;
+    }
+
     .input__components--button{
         font-size: 14px;
     }
 
        
     .input__components--input{
-        width: 253px;
+        width: 230px;
         height: 27px;
+    }
+
+    .input__components--button {
+        float: right;
     }
 }
 
-@media all and (max-width: 320px) {
-    
-    .input__components {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-       
+@media all and (max-width: 370px) {
+     
     .input__components--input{
-        width: 130px;
+        width: 170px;
         height: 25px;
     }
 }
