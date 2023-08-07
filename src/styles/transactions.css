@@ -82,8 +82,20 @@ span {
     }
 }
 
-@media all and (max-width: 420px) {
-    .transactions__company__arrow{
-        margin-top: 24px;
+
+
+@media all and (max-width: 320px) {
+
+    .transactions__company__data--name{
+        font-size: 14px;
+    }
+
+    .transactions__quantity--amount{
+        font-size: 14px;
+    }
+    
+    .transactions__quantity--currency {
+        font-size: 11.5px;
+        color: #0E0F0C;
     }
 }
