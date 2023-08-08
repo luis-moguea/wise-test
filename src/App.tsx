@@ -3,7 +3,7 @@ import NavBar from "./components/views/NavBar";
 import "./styles/main.css";
 import MoreActions from "./components/views/MoreActions";
 import InputComp from "./components/views/InputComp";
-import FlagsOverflow from "./components/views/FlagsOverflow";
+import ContentFlagsBoxes from "./components/views/ContentFlagsBoxes";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <div className="app">
           <NavBar />
           <div className="main__content__flags">
-            <FlagsOverflow />
+            <ContentFlagsBoxes />
           </div>
           <InputComp />
           <div className="main__content__actions">

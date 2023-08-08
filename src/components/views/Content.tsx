@@ -1,4 +1,4 @@
-import ContentFlagsBoxes from "../ContentFlagsBoxes";
+import ContentFlagsBoxes from "./ContentFlagsBoxes";
 import InputComp from "./InputComp";
 
 const Content = () => {
