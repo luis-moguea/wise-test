@@ -40,7 +40,7 @@ const InputComp = () => {
     if (event.key === "Enter") {
       event.preventDefault();
 
-      const inputValueTrim = event.currentTarget.value.trim();
+      const inputValueTrim = (event.target as HTMLInputElement).value.trim();
       setInputValue(inputValueTrim);
 
       if (inputValueTrim.length === 0) {
