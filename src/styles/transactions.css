@@ -2,9 +2,18 @@
     padding: 0 0 10px 0;
 }
 
-.transactions__error{
+.transactions__input__value{
     color: red;
+    opacity: 0.6;
+    font-weight: normal;
+    text-transform: uppercase;
 }
+
+.transactions__input__empty{
+    color: red;
+    opacity: 0.8;
+}
+
 
 .transactions__flex{
     display: flex;
