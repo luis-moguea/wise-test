@@ -115,7 +115,9 @@ const InputComp = () => {
       </div>
       {
         <section className="transactions">
-          {noData && <p>No transaction has been found</p>}
+          {noData && (
+            <p>{`Transaction with company's name "${inputValue}" has not been found`}</p>
+          )}
           {empty && <p>Please enter a name</p>}
           {seeAll &&
             data.map((el, index) => (
