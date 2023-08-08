@@ -29,7 +29,7 @@ const InputComp = () => {
       if (inputValue.length === 0) {
         setEmpty(true);
         setNoData(false);
-        setTapKey(false);
+        setTapKey(null);
         setSeeAll(false);
 
         setTimeout(() => {
