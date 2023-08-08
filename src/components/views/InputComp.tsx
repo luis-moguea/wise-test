@@ -16,7 +16,7 @@ const InputComp = () => {
   const [inputValue, setInputValue] = useState("");
   const [seeAll, setSeeAll] = useState(false);
   const [data, setData] = useState<Data[]>([]);
-  const [tapKey, setTapKey] = useState<boolean | null>(null);
+  const [showData, setShowData] = useState<boolean | null>(null);
   const [empty, setEmpty] = useState(false);
   const [noData, setNoData] = useState(false);
 
@@ -46,7 +46,7 @@ const InputComp = () => {
       if (inputValueTrim.length === 0) {
         setEmpty(true);
         setNoData(false);
-        setTapKey(null);
+        setShowData(null);
         setSeeAll(false);
 
         setTimeout(() => {
@@ -64,17 +64,17 @@ const InputComp = () => {
         if (inputValueTrim.length >= 1 && filter.length === 0) {
           setEmpty(false);
           setNoData(true);
-          setTapKey(false);
+          setShowData(false);
           setSeeAll(false);
         } else if (filter.length >= 1) {
           setEmpty(false);
           setNoData(false);
-          setTapKey(true);
+          setShowData(true);
           setSeeAll(false);
         } else {
           setEmpty(false);
           setNoData(false);
-          setTapKey(null);
+          setShowData(null);
           setSeeAll(false);
         }
       }
@@ -88,7 +88,7 @@ const InputComp = () => {
   const handleSeeAll = () => {
     setSeeAll(true);
     setEmpty(false);
-    setTapKey(false);
+    setShowData(false);
     setNoData(false);
   };
 
@@ -147,7 +147,7 @@ const InputComp = () => {
                 </div>
               </div>
             ))}
-          {tapKey &&
+          {showData &&
             filteredData.map((el, index) => (
               <div key={index} className="transactions__flex">
                 <div className="transactions__company">
