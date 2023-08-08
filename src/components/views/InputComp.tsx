@@ -20,51 +20,6 @@ const InputComp = () => {
   const [empty, setEmpty] = useState(false);
   const [noData, setNoData] = useState(false);
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-
-      setInputValue(event.currentTarget.value);
-
-      if (inputValue.length === 0) {
-        setEmpty(true);
-        setNoData(false);
-        setTapKey(null);
-        setSeeAll(false);
-
-        setTimeout(() => {
-          setEmpty(false);
-        }, 3000);
-      }
-    }
-  };
-
-  useEffect(() => {
-    const filter = data.filter((el) => {
-      return el.company.toLowerCase().includes(inputValue.toLowerCase());
-    });
-
-    if (inputValue.length >= 1 && filter.length === 0) {
-      setEmpty(false);
-      setNoData(true);
-      if (tapKey !== null) {
-        setTapKey(false);
-      }
-      setSeeAll(false);
-    } else if (filter.length >= 1) {
-      setEmpty(false);
-      if (tapKey !== null) {
-        setTapKey(true);
-      }
-      setSeeAll(false);
-      setNoData(false);
-    } else {
-      setTapKey(null);
-    }
-
-    setFilteredData(filter);
-  }, [inputValue, data]);
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 812) {
@@ -80,6 +35,51 @@ const InputComp = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+
+      const inputValueTrim = event.currentTarget.value.trim();
+      setInputValue(inputValueTrim);
+
+      if (inputValueTrim.length === 0) {
+        setEmpty(true);
+        setNoData(false);
+        setTapKey(null);
+        setSeeAll(false);
+
+        setTimeout(() => {
+          setEmpty(false);
+        }, 3000);
+      } else {
+        const filter = data.filter((el) => {
+          return el.company
+            .toLowerCase()
+            .includes(inputValueTrim.toLowerCase());
+        });
+
+        setFilteredData(filter);
+
+        if (inputValueTrim.length >= 1 && filter.length === 0) {
+          setEmpty(false);
+          setNoData(true);
+          setTapKey(false);
+          setSeeAll(false);
+        } else if (filter.length >= 1) {
+          setEmpty(false);
+          setNoData(false);
+          setTapKey(true);
+          setSeeAll(false);
+        } else {
+          setEmpty(false);
+          setNoData(false);
+          setTapKey(null);
+          setSeeAll(false);
+        }
+      }
+    }
+  };
 
   const preventDefault = (event: FormEvent) => {
     event.preventDefault();
