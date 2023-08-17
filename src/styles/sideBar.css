@@ -49,13 +49,6 @@
     gap: 20px;
 }
 
-.sidebar__list:hover{
-    color: #323232;
-    fill: #323232;
-    cursor: pointer;
-}
-
-
 .sidebar__li{
     display: flex;
     color: #525252;
@@ -64,6 +57,16 @@
     font-size: 14px;
     gap: 40px;
 }
+
+.sidebar__li:hover .sidebar__list {
+    color: #323232;
+    fill: #323232;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+
 
 @media all and (max-width: 768px) {
     .sidebar{

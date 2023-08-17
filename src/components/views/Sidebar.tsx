@@ -4,7 +4,7 @@ import logo from "../../assets/Logo.png";
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <nav className="sidebar">
       <img className="sidebar__image" src={logo} alt="app-logo" />
       <button className="sidebar__button">Send money</button>
 
@@ -18,7 +18,7 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 

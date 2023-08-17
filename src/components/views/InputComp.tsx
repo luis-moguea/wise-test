@@ -105,7 +105,7 @@ const InputComp = () => {
               type="text"
             />
             <button
-              onClick={() => handleSeeAll()}
+              onClick={handleSeeAll}
               className="input__components--button"
             >
               See all

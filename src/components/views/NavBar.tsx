@@ -5,8 +5,8 @@ import arrow from "../../../public/icons/chevron-down.svg";
 
 const NavBar = () => {
   return (
-    <div className="navbar__main">
-      <nav className="navbar">
+    <header className="navbar__main">
+      <div className="navbar">
         <div className="navbar__notify">
           <img className="navbar__notify--bell" src={bell} alt="bell-svg" />
         </div>
@@ -23,8 +23,8 @@ const NavBar = () => {
             alt="arrow-down"
           />
         </div>
-      </nav>
-    </div>
+      </div>
+    </header>
   );
 };
 

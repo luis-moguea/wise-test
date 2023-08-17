@@ -38,7 +38,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    margin-top: 24px;
+    margin-top: 21px;
     background-color: #EAF1EB;
     display: flex;
     justify-content: center;
@@ -49,9 +49,8 @@
 }
 
 .transactions__company__data{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
+    
 }
 
 .transactions__company__data--name {
@@ -64,9 +63,7 @@
 }
 
 .transactions__quantity{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
 }
 
 .transactions__quantity--amount {
