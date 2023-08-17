@@ -68,6 +68,8 @@
 
     .navbar{
         padding: 10px 0;
+        margin-bottom: 20px;
+        justify-content: unset;
     }
 
     .navbar__notify{
@@ -83,20 +85,19 @@
     .navbar__profile--user{
         font-size: 14px;
         width: 120px;
+        margin-right: -20px;
     }
 
     .navbar__notify--bell{
         width: 18px;
     }
 
-    .navbar__profile{
-        border-radius: 20px;
-        
+    .navbar__profile--user{
+        font-size: 13px;
     }
 
-    .navbar{
-        margin-bottom: 20px;
-        justify-content: unset;
+    .navbar__profile{
+        
     }
 
 }
