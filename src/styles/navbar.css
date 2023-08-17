@@ -83,21 +83,17 @@
     }
 
     .navbar__profile--user{
-        font-size: 14px;
+        font-size: 13px;
         width: 120px;
         margin-right: -20px;
     }
 
+    .navbar__profile--user:hover{
+        margin-right: unset;
+    }
+
     .navbar__notify--bell{
         width: 18px;
-    }
-
-    .navbar__profile--user{
-        font-size: 13px;
-    }
-
-    .navbar__profile{
-        
     }
 
 }
